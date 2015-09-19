@@ -6,8 +6,16 @@
         <div>
             <h1><a href="">Django Girls Blog</a></h1>
         </div>
-              <h2>Kate M.</h2>
-        <div>
+              <h2>{{ request.user.username }}</h2>
+
+        {% for post in posts %}
+            <h1>{{ post.title }}</h1>
+            <h4> {{ post.author.username }} </h4>
+            <p>  {{ post.text }} </p>
+            <hr>
+        {% endfor %}
+
+        <!-- <div>
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">My first post</a></h2>
             <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
@@ -17,6 +25,6 @@
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">My second post</a></h2>
             <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        </div> -->
     </body>
 </html>
